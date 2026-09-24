@@ -1,0 +1,10 @@
+{
+  "description": "This mobile-responsive website showcases Expolite Exim's turmeric products with a professional design, featuring high-quality images and a user-friendly multi-page layout.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
