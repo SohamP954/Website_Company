@@ -1,94 +1,66 @@
 type Page = 'home' | 'about' | 'products' | 'contact';
 
-const HERO = 'https://images.unsplash.com/photo-1606951444141-e5533feb55be?w=1920&h=700&fit=crop&auto=format';
+interface ProductsProps {
+  setPage: (page: Page) => void;
+}
 
-const products = [
+const PRODUCTS_DATA = [
   {
-    id: 1,
-    title: 'Turmeric Finger (Whole)',
-    category: 'Whole Spice',
-    img: 'https://images.unsplash.com/photo-1768729341078-9da4e0ea959e?w=700&h=560&fit=crop&auto=format',
-    curcumin: '3–7%',
-    moisture: '≤10%',
-    form: 'Whole dried rhizome',
-    desc: 'Our premium turmeric fingers are sun-dried whole rhizomes sourced from Sangli and Nizamabad — the heartland of Indian turmeric production. Rich amber colour, intense aroma.',
-    certs: ['FSSAI', 'ISO 22000', 'APEDA'],
-    tag: 'Bestseller',
+    id: '01',
+    category: 'PROCESSED SPICE / FOOD GRADE',
+    title: 'TURMERIC POWDER',
+    origin: 'SANGLI, MAHARASHTRA, INDIA',
+    desc: 'A vibrant golden-yellow spice made from the dried and ground rhizomes of the Curcuma longa plant, a member of the ginger family — sourced from Sangli, Maharashtra.',
+    image: '/images/turmeric_hero_slide1_1790762582982.jpg',
+    specs: [
+      { label: 'GRADES', value: 'Curcumin 2–5% min. · Premium 5%+' },
+      { label: 'MESH SIZE', value: '60–100 mesh (Fine / Ultra-Fine)' },
+      { label: 'PACKAGING', value: '100 g – 20 kg, or buyer requirement' },
+      { label: 'MOQ', value: '1 container (20ft FCL / 18–20 MT)' },
+      { label: 'HS CODE', value: '0910 30 30' },
+    ],
+    features: [
+      'Indian origin',
+      'Sangli sourcing',
+      'Curcumin-based grades',
+      'Multiple mesh options',
+      'Flexible packaging',
+      'Private-label options',
+    ],
   },
   {
-    id: 2,
-    title: 'Turmeric Powder',
-    category: 'Ground Spice',
-    img: 'https://images.unsplash.com/photo-1615485500834-bc10199bc727?w=700&h=560&fit=crop&auto=format',
-    curcumin: '3–5%',
-    moisture: '≤8%',
-    form: 'Fine / coarse milled',
-    desc: 'Stone-milled from select turmeric fingers, our powder delivers consistent colour (60–65 ASTA units), superior curcumin, and clean flavour. Available in various mesh sizes.',
-    certs: ['FSSAI', 'ISO 22000', 'APEDA', 'Halal'],
-    tag: 'High Demand',
-  },
-  {
-    id: 3,
-    title: 'Organic Turmeric Finger',
-    category: 'Organic',
-    img: 'https://images.unsplash.com/photo-1504387828636-abeb50778c0c?w=700&h=560&fit=crop&auto=format',
-    curcumin: '4–6%',
-    moisture: '≤10%',
-    form: 'Whole dried rhizome',
-    desc: 'Cultivated without synthetic inputs. Certified by USDA NOP and EU Organic. Traceable from seed to shipment through our farm partner registry.',
-    certs: ['USDA Organic', 'EU Organic', 'FSSAI', 'ISO 22000'],
-    tag: 'Certified Organic',
-  },
-  {
-    id: 4,
-    title: 'Organic Turmeric Powder',
-    category: 'Organic',
-    img: 'https://images.unsplash.com/photo-1702041295331-840d4d9aa7c9?w=700&h=560&fit=crop&auto=format',
-    curcumin: '3–5%',
-    moisture: '≤8%',
-    form: 'Fine milled',
-    desc: 'Milled from USDA and EU certified organic fingers. Zero pesticide residue, non-irradiated. Ideal for nutraceutical, supplement, and premium food brands.',
-    certs: ['USDA Organic', 'EU Organic', 'Halal', 'Kosher'],
-    tag: 'Premium',
-  },
-  {
-    id: 5,
-    title: 'High-Curcumin Powder',
-    category: 'Specialty',
-    img: 'https://images.unsplash.com/photo-1606951444141-e5533feb55be?w=700&h=560&fit=crop&auto=format',
-    curcumin: '5–8%',
-    moisture: '≤7%',
-    form: 'Extra fine milled',
-    desc: 'Specially cultivated and selected for nutraceutical and extract applications. Curcumin content guaranteed at 5% minimum per batch, with COA documentation.',
-    certs: ['ISO 22000', 'FSSAI', 'Lab Certified'],
-    tag: 'Specialty',
-  },
-  {
-    id: 6,
-    title: 'Turmeric Extract (Curcumin 95%)',
-    category: 'Extract',
-    img: 'https://images.unsplash.com/photo-1606914469030-681790351049?w=700&h=560&fit=crop&auto=format',
-    curcumin: '95%',
-    moisture: '≤5%',
-    form: 'Standardised extract',
-    desc: 'Pharmaceutical-grade curcuminoid extract standardised to 95%. Ideal for capsules, tablets, and functional food applications. Full COA and COO provided.',
-    certs: ['GMP', 'ISO 22000', 'Halal', 'Kosher'],
-    tag: 'Pharma Grade',
+    id: '02',
+    category: 'WHOLE AGRICULTURAL SPICE',
+    title: 'FINGER TURMERIC',
+    origin: 'SANGLI, MAHARASHTRA, INDIA',
+    desc: 'Whole sun-dried and double-polished rhizomes of the Curcuma longa plant, carefully selected and graded from premier harvests in Sangli, Maharashtra for maximum curcumin retention, density, and authentic aroma.',
+    image: '/images/turmeric_hero_slide3_1790762998825.jpg',
+    specs: [
+      { label: 'GRADES', value: 'Salem · Nizamabad · Rajapore (Curcumin 3–7%)' },
+      { label: 'PROCESSING', value: 'Double Polished / Single Polished / Raw Unpolished' },
+      { label: 'PACKAGING', value: '25 kg / 50 kg Jute or PP bags, or custom bulk' },
+      { label: 'MOQ', value: '1 container (20ft FCL / 18–20 MT)' },
+      { label: 'HS CODE', value: '0910 30 20' },
+    ],
+    features: [
+      '100% Whole dried rhizomes',
+      'Double-polished & sorted',
+      'High natural curcumin',
+      'Low moisture (<9% guaranteed)',
+      'Direct Sangli farm sourcing',
+      'Phytosanitary certified',
+    ],
   },
 ];
 
 const certs = [
+  { name: 'APEDA', desc: 'Agricultural & Processed Food Products Export Development' },
   { name: 'FSSAI', desc: 'Food Safety & Standards Authority of India' },
-  { name: 'ISO 22000', desc: 'International Food Safety Management' },
-  { name: 'APEDA', desc: 'Agricultural & Processed Food Products Export' },
-  { name: 'USDA Organic', desc: 'United States Dept. of Agriculture Certified' },
-  { name: 'EU Organic', desc: 'European Union Organic Certification' },
-  { name: 'Halal', desc: 'Halal Certification for Muslim markets' },
+  { name: 'ISO 22000', desc: 'International Food Safety Management Standard' },
+  { name: 'USDA Organic', desc: 'US National Organic Program Certification' },
+  { name: 'EU Organic', desc: 'European Union Organic Agriculture Standard' },
+  { name: 'Phytosanitary', desc: 'Export Quarantine & Plant Health Clearance' },
 ];
-
-interface ProductsProps {
-  setPage: (page: Page) => void;
-}
 
 export default function Products({ setPage }: ProductsProps) {
   const nav = (page: Page) => {
@@ -96,200 +68,217 @@ export default function Products({ setPage }: ProductsProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleInquiry = (productName: string) => {
+    const url = `https://wa.me/918010036756?text=${encodeURIComponent(
+      `Hello Expogold Exim, I am interested in ordering/inquiring about ${productName}.`
+    )}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <div>
+    <div className="bg-[#FBFBFA]">
       {/* HERO */}
-      <section className="relative h-80 lg:h-[420px] flex items-end overflow-hidden bg-warm-900">
-        <img src={HERO} alt="Turmeric powder" className="absolute inset-0 w-full h-full object-cover" />
+      <section className="relative h-80 lg:h-96 flex items-end overflow-hidden bg-warm-900">
+        <img
+          src="/images/turmeric_hero_slide1_1790762582982.jpg"
+          alt="Expogold Turmeric Catalog"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to top, rgba(26,18,8,0.9) 0%, rgba(26,18,8,0.3) 100%)' }}
+          style={{ background: 'linear-gradient(to top, rgba(20,14,6,0.92) 0%, rgba(20,14,6,0.4) 100%)' }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-14 w-full">
-          <p className="section-label mb-3" style={{ color: '#FAC830' }}>What We Offer</p>
+          <p className="section-label mb-2 text-gold-300" style={{ color: '#FAC830' }}>
+            EXPORT PRODUCT LINE
+          </p>
           <h1
-            className="text-4xl lg:text-6xl font-bold text-white"
+            className="text-4xl lg:text-6xl font-bold text-white tracking-tight"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
-            Our Product Range
+            Our Products
           </h1>
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="py-14 bg-warm-50" style={{ backgroundColor: '#FDF8F0' }}>
+      <section className="py-12 bg-white border-b border-[#EAE6DC]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl">
             <p
-              className="text-lg leading-relaxed"
-              style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}
+              className="text-base sm:text-lg leading-relaxed text-[#5a4030]"
+              style={{ fontFamily: 'Outfit, sans-serif' }}
             >
-              From whole fingers to pharmaceutical-grade extracts, every Expolite Exim product is backed by third-party lab testing, full batch documentation, and our commitment to purity. MOQ and packaging are fully customisable to your requirements.
+              Expogold Exim specializes exclusively in the highest quality Indian turmeric. Directly sourced from Sangli, Maharashtra, our product offerings are strictly tested, graded, and packaged to meet global phytosanitary and food safety import standards.
             </p>
           </div>
         </div>
       </section>
 
-      {/* PRODUCTS GRID */}
-      <section className="pb-24 pt-4 bg-warm-50" style={{ backgroundColor: '#FDF8F0' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((p) => (
-              <div
-                key={p.id}
-                className="card-hover rounded-xl overflow-hidden bg-white shadow-sm border flex flex-col"
-                style={{ borderColor: '#EAE6DC' }}
-              >
-                <div className="relative h-52 bg-gold-100 overflow-hidden shrink-0">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                  <span
-                    className="absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded"
-                    style={{ backgroundColor: '#C8941A', color: 'white', fontFamily: 'Outfit, sans-serif' }}
-                  >
-                    {p.tag}
-                  </span>
-                  <span
-                    className="absolute top-3 right-3 text-xs px-2 py-1 rounded"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.9)', color: '#7D590E', fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}
-                  >
-                    {p.category}
-                  </span>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3
-                    className="text-xl font-bold mb-2"
-                    style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
-                  >
-                    {p.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed mb-5"
-                    style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}
-                  >
-                    {p.desc}
-                  </p>
-
-                  {/* Specs */}
-                  <div
-                    className="grid grid-cols-3 gap-2 p-3 rounded-lg mb-5 text-center"
-                    style={{ backgroundColor: '#FEF3D0' }}
-                  >
-                    <div>
-                      <p className="text-xs font-bold" style={{ color: '#A67714', fontFamily: 'Outfit, sans-serif' }}>Curcumin</p>
-                      <p className="text-xs mt-0.5" style={{ color: '#5a4030', fontFamily: 'Outfit, sans-serif' }}>{p.curcumin}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold" style={{ color: '#A67714', fontFamily: 'Outfit, sans-serif' }}>Moisture</p>
-                      <p className="text-xs mt-0.5" style={{ color: '#5a4030', fontFamily: 'Outfit, sans-serif' }}>{p.moisture}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold" style={{ color: '#A67714', fontFamily: 'Outfit, sans-serif' }}>Form</p>
-                      <p className="text-xs mt-0.5" style={{ color: '#5a4030', fontFamily: 'Outfit, sans-serif' }}>{p.form}</p>
-                    </div>
+      {/* PRODUCT CARDS SHOWCASE (2 PRODUCTS) */}
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16 lg:space-y-24">
+          {PRODUCTS_DATA.map((p, idx) => (
+            <div
+              key={p.id}
+              className="bg-white rounded-3xl border border-[#EAE6DC] shadow-xl overflow-hidden"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                
+                {/* Product Image Column */}
+                <div className={`lg:col-span-5 relative min-h-[380px] lg:min-h-full bg-warm-900 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+                  {/* Dark subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+                  
+                  {/* Top-left Product badge matching screenshot */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <span
+                      className="px-3.5 py-1.5 rounded bg-black/80 text-gold-400 font-mono text-xs font-bold uppercase tracking-widest border border-gold-500/40 shadow-md"
+                    >
+                      PRODUCT {p.id}
+                    </span>
                   </div>
+                </div>
 
-                  {/* Certs */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {p.certs.map((c) => (
+                {/* Product Content Column */}
+                <div className={`lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div>
+                    {/* Category */}
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <span className="w-6 h-0.5 bg-[#D97706]" />
                       <span
-                        key={c}
-                        className="text-xs px-2 py-0.5 rounded border"
-                        style={{ borderColor: '#EAE6DC', color: '#7D590E', fontFamily: 'Outfit, sans-serif', backgroundColor: 'white' }}
+                        className="text-xs font-bold tracking-[0.22em] uppercase text-[#D97706]"
+                        style={{ fontFamily: 'Outfit, sans-serif' }}
                       >
-                        {c}
+                        {p.category}
                       </span>
-                    ))}
+                    </div>
+
+                    {/* Title */}
+                    <h2
+                      className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A1208] uppercase tracking-tight mb-2"
+                      style={{ fontFamily: 'Outfit, sans-serif' }}
+                    >
+                      {p.title}
+                    </h2>
+
+                    {/* Origin */}
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#A67714] tracking-widest uppercase mb-6">
+                      <span>📍</span>
+                      <span style={{ fontFamily: 'Outfit, sans-serif' }}>ORIGIN: {p.origin}</span>
+                    </div>
+
+                    {/* Description */}
+                    <p
+                      className="text-sm sm:text-base leading-relaxed text-[#5A4535] mb-8"
+                      style={{ fontFamily: 'Outfit, sans-serif' }}
+                    >
+                      {p.desc}
+                    </p>
+
+                    {/* Specifications Table */}
+                    <div className="divide-y divide-[#EAE6DC] border-t border-b border-[#EAE6DC] mb-8">
+                      {p.specs.map((s) => (
+                        <div key={s.label} className="py-3 sm:py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-sm">
+                          <span
+                            className="text-xs font-bold uppercase tracking-wider text-[#8A7050] sm:w-36 shrink-0"
+                            style={{ fontFamily: 'Outfit, sans-serif' }}
+                          >
+                            {s.label}
+                          </span>
+                          <span
+                            className="font-bold text-[#1A1208] text-right sm:text-left sm:flex-1"
+                            style={{ fontFamily: 'Outfit, sans-serif' }}
+                          >
+                            {s.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Checklist Grid (2 Columns) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 mb-10">
+                      {p.features.map((f) => (
+                        <div key={f} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#3A2806]">
+                          <span className="w-4 h-4 rounded-full bg-[#FEF3D0] text-[#D97706] flex items-center justify-center text-[10px] font-bold shrink-0">
+                            ✓
+                          </span>
+                          <span className="font-medium" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                            {f}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <button
-                    onClick={() => nav('contact')}
-                    className="mt-auto w-full py-2.5 text-sm font-semibold text-white rounded hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: '#C8941A', fontFamily: 'Outfit, sans-serif' }}
-                  >
-                    Request Quote / Sample
-                  </button>
+                  {/* Actions */}
+                  <div className="flex flex-wrap items-center gap-4 pt-4">
+                    <button
+                      onClick={() => nav('contact')}
+                      className="px-7 py-3.5 bg-[#D97706] hover:bg-[#B45309] text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2"
+                      style={{ backgroundColor: '#D97706', fontFamily: 'Outfit, sans-serif' }}
+                    >
+                      <span>VIEW PRODUCT</span>
+                      <span>→</span>
+                    </button>
+                    <button
+                      onClick={() => handleInquiry(p.title)}
+                      className="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#1A1208] hover:text-[#D97706] transition-colors flex items-center gap-1.5"
+                      style={{ fontFamily: 'Outfit, sans-serif' }}
+                    >
+                      <span>REQUEST A QUOTE</span>
+                      <span className="text-[#D97706]">→</span>
+                    </button>
+                  </div>
+
                 </div>
+
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* CERTIFICATIONS */}
-      <section className="py-24 bg-white">
+      {/* CERTIFICATIONS & EXPORT COMPLIANCE */}
+      <section className="py-20 bg-white border-t border-[#EAE6DC]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-14">
-            <p className="section-label mb-4">Compliance</p>
-            <div className="gold-divider mx-auto mb-6" />
+            <p className="section-label mb-3 text-[#D97706]">EXPORT COMPLIANCE</p>
             <h2
-              className="text-4xl font-bold"
+              className="text-3xl sm:text-4xl font-bold text-warm-900"
               style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
             >
-              Our Certifications
+              Certified for International Markets
             </h2>
             <p
-              className="mt-4 max-w-xl mx-auto text-sm leading-relaxed"
-              style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}
+              className="mt-3 max-w-xl mx-auto text-sm leading-relaxed text-[#5A4535]"
+              style={{ fontFamily: 'Outfit, sans-serif' }}
             >
-              Every product we export is compliant with the destination country's food safety regulations. We maintain full documentation for customs, lab reports, and traceability.
+              Every consignment from Expogold Exim is backed by full laboratory analysis and phytosanitary clearance for seamless customs processing across Europe, the Americas, Gulf, and Asia.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {certs.map((c) => (
               <div
                 key={c.name}
-                className="card-hover text-center p-5 rounded-xl border"
-                style={{ borderColor: '#EAE6DC' }}
+                className="card-hover text-center p-5 rounded-2xl border border-[#EAE6DC] bg-[#FAFAF8]"
               >
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-xs font-bold"
-                  style={{ backgroundColor: '#C8941A', fontFamily: 'Outfit, sans-serif' }}
+                  className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-sm font-bold shadow"
+                  style={{ backgroundColor: '#D97706', fontFamily: 'Outfit, sans-serif' }}
                 >
                   ✓
                 </div>
-                <p className="text-sm font-bold mb-1" style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}>{c.name}</p>
-                <p className="text-xs leading-tight" style={{ fontFamily: 'Outfit, sans-serif', color: '#8a6040' }}>{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PACKAGING & MOQ */}
-      <section className="py-16 bg-warm-50" style={{ backgroundColor: '#FDF8F0' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Bulk Packaging',
-                desc: '25 kg, 50 kg HDPE bags, jute bags, or PP woven bags. Suitable for processors and distributors.',
-                icon: '📦',
-              },
-              {
-                title: 'Retail Ready',
-                desc: 'Vacuum-sealed pouches from 50g to 5kg with custom label printing for your brand.',
-                icon: '🏷️',
-              },
-              {
-                title: 'Custom MOQ',
-                desc: 'Starting from 500 kg for trial orders. No rigid minimums for long-term partnerships.',
-                icon: '🤝',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-7 rounded-xl border bg-white"
-                style={{ borderColor: '#EAE6DC' }}
-              >
-                <span className="text-2xl">{item.icon}</span>
-                <h3
-                  className="text-lg font-bold mt-4 mb-2"
-                  style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                  {item.desc}
+                <p className="text-sm font-bold mb-1 text-[#1A1208]" style={{ fontFamily: 'Playfair Display, serif' }}>
+                  {c.name}
+                </p>
+                <p className="text-xs leading-snug text-[#8a6040]" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  {c.desc}
                 </p>
               </div>
             ))}

@@ -1,30 +1,36 @@
 type Page = 'home' | 'about' | 'products' | 'contact';
 
-const HERO = 'https://images.unsplash.com/photo-1643474004250-05d73e1473e0?w=1920&h=700&fit=crop&auto=format';
-const OWNER = 'https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=600&h=700&fit=crop&auto=format';
-const FARM1 = 'https://images.unsplash.com/photo-1707811179851-c1f93698ad46?w=800&h=600&fit=crop&auto=format';
-const FARM2 = 'https://images.unsplash.com/photo-1622183526757-7aac23115ffb?w=800&h=500&fit=crop&auto=format';
-const SPICE = 'https://images.unsplash.com/photo-1606914469030-681790351049?w=800&h=600&fit=crop&auto=format';
-
-const values = [
-  { title: 'Integrity', desc: 'Honest relationships with farmers, buyers, and every partner in our supply chain.' },
-  { title: 'Quality First', desc: 'We never compromise on purity. Every batch is lab-tested before it leaves our facility.' },
-  { title: 'Sustainability', desc: 'Supporting eco-friendly farming practices that preserve the land for future generations.' },
-  { title: 'Partnership', desc: 'We build long-term partnerships, not transactions. Your success is our success.' },
-];
-
-const milestones = [
-  { year: '2009', event: 'Expolite Exim founded by Prathamesh Chavan in Maharashtra.' },
-  { year: '2012', event: 'First international export to the Middle East and Southeast Asia.' },
-  { year: '2016', event: 'Achieved ISO 22000 Food Safety Certification.' },
-  { year: '2019', event: 'Expanded to organic line with USDA & EU Organic Certification.' },
-  { year: '2022', event: 'Crossed 500MT annual export volume; serving 40+ countries.' },
-  { year: '2024', event: 'Launched direct-farm traceability program across 200+ partner farms.' },
-];
-
 interface AboutProps {
   setPage: (page: Page) => void;
 }
+
+const values = [
+  {
+    title: 'Farmer Integrity',
+    desc: 'Direct ethical partnerships with 200+ farming families across Sangli and Nizamabad, eliminating intermediaries and ensuring fair crop compensation.',
+  },
+  {
+    title: 'High Curcumin Quality',
+    desc: 'We never compromise on purity or chemical parameters. Every export batch is third-party lab tested with verifiable Certificates of Analysis (COA).',
+  },
+  {
+    title: 'Sustainable Agriculture',
+    desc: 'Promoting organic composting, natural pest protection, and traditional sun-curing that preserves the biological potency of curcuminoids.',
+  },
+  {
+    title: 'Global Export Reliability',
+    desc: 'Fast documentation turnaround, compliant phytosanitary packaging, and transparent shipment tracking for buyers across 40+ countries.',
+  },
+];
+
+const milestones = [
+  { year: '2009', event: 'Expogold Exim founded by Mr. Prathamesh Chavan in Vita, Sangli district, Maharashtra.' },
+  { year: '2013', event: 'First international container shipment of double-polished turmeric fingers to Middle East & Southeast Asia.' },
+  { year: '2017', event: 'Achieved ISO 22000 Food Safety Management and APEDA Export Registration.' },
+  { year: '2020', event: 'Launched USDA & EU certified organic turmeric line with dedicated organic partner farm clusters.' },
+  { year: '2023', event: 'Crossed 500 MT annual export milestone, serving spice importers and extract laboratories in 40+ countries.' },
+  { year: '2025', event: 'Upgraded processing facility with automated stone-milling, vacuum packing, and direct WhatsApp quotation portal.' },
+];
 
 export default function About({ setPage }: AboutProps) {
   const nav = (page: Page) => {
@@ -36,25 +42,34 @@ export default function About({ setPage }: AboutProps) {
     <div>
       {/* HERO */}
       <section className="relative h-80 lg:h-[420px] flex items-end overflow-hidden bg-warm-900">
-        <img src={HERO} alt="Spice farm harvest" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,18,8,0.88) 0%, rgba(26,18,8,0.3) 100%)' }} />
+        <img
+          src="/images/turmeric_hero_slide2_1790762978799.jpg"
+          alt="Turmeric farm crop in Maharashtra"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to top, rgba(20,14,6,0.92) 0%, rgba(20,14,6,0.4) 100%)' }}
+        />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-14 w-full">
-          <p className="section-label mb-3" style={{ color: '#FAC830' }}>Who We Are</p>
+          <p className="section-label mb-3 text-gold-300" style={{ color: '#FAC830' }}>
+            Our Heritage & Roots
+          </p>
           <h1
-            className="text-4xl lg:text-6xl font-bold text-white"
+            className="text-4xl lg:text-6xl font-bold text-white tracking-tight"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
-            About Expolite Exim
+            About Expogold Exim
           </h1>
         </div>
       </section>
 
-      {/* STORY */}
+      {/* STORY SECTION WITH TURMERIC FARM IMAGES */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="section-label mb-4">Our Story</p>
+              <p className="section-label mb-4">Our Soil & Origin</p>
               <div className="gold-divider mb-6" />
               <h2
                 className="text-3xl lg:text-4xl font-bold mb-6 leading-snug"
@@ -62,110 +77,148 @@ export default function About({ setPage }: AboutProps) {
               >
                 Rooted in the
                 <br />
-                <em style={{ color: '#C8941A' }}>Golden Soil of Maharashtra</em>
+                <em style={{ color: '#C8941A' }}>Golden Agro-Belt of Maharashtra</em>
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                Expolite Exim was born from a profound respect for one of India's most ancient treasures — turmeric. Founded in 2009, we set out to bridge the gap between Maharashtra's exceptional farmers and the world's demand for pure, potent curcumin.
+                <strong>Expogold Exim</strong> was established with a profound commitment to India’s most revered spice — <em>Curcuma longa</em> (Turmeric). Headquartered in Vita, District Sangli — known globally as the capital of Indian turmeric trade — we bridge the fertile farms of Western India with importers worldwide.
               </p>
               <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                Over fifteen years, we have built a network of over 200 trusted farming families, implemented rigorous quality control, and established a reputation for reliability that spans five continents.
+                Over fifteen years of agricultural dedication, founder <strong>Mr. Prathamesh Chavan</strong> has cultivated a direct network of more than 200 certified farming families. By removing unnecessary intermediaries, we ensure maximum freshness, authentic high-curcumin retention, and full batch traceability.
               </p>
               <p className="text-base leading-relaxed" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                We believe that ethical sourcing, transparent practices, and personal relationships are the foundation of great trade.
+                Whether supplying whole dried Salem fingers, bright yellow organic ground powder, or high-curcumin extract grades, our hallmark is uncompromising consistency and ethical integrity.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-lg overflow-hidden bg-gold-100 h-56">
-                <img src={FARM1} alt="Farm harvest" className="w-full h-full object-cover" />
+
+            {/* Gallery Grid of Authentic Turmeric Operations */}
+            <div className="grid grid-cols-2 gap-3.5">
+              <div className="rounded-xl overflow-hidden bg-gold-100 h-60 shadow-sm relative group">
+                <img
+                  src="/images/turmeric_farmer_harvest_1790763043941.jpg"
+                  alt="Turmeric Farmer Harvest"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
+                  Fresh Farm Harvest
+                </div>
               </div>
-              <div className="rounded-lg overflow-hidden bg-gold-100 h-56">
-                <img src={SPICE} alt="Spice quality" className="w-full h-full object-cover" />
+              <div className="rounded-xl overflow-hidden bg-gold-100 h-60 shadow-sm relative group">
+                <img
+                  src="/images/turmeric_hero_slide1_1790762582982.jpg"
+                  alt="Premium Turmeric Powder and Botanical Leaves"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
+                  Pure Golden Haldi
+                </div>
               </div>
-              <div className="rounded-lg overflow-hidden bg-gold-100 col-span-2 h-44">
-                <img src={FARM2} alt="Turmeric fields" className="w-full h-full object-cover object-center" />
+              <div className="rounded-xl overflow-hidden bg-gold-100 col-span-2 h-48 shadow-sm relative group">
+                <img
+                  src="/images/turmeric_hero_slide3_1790762998825.jpg"
+                  alt="Turmeric Sorting & Export Packing Facility"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
+                  Modern Export Grading & Bagging Facility
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* OWNER */}
+      {/* FOUNDER PROFILE */}
       <section className="py-24 bg-warm-50" style={{ backgroundColor: '#FDF8F0' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
               <div
-                className="absolute -top-4 -left-4 w-32 h-32 rounded-full opacity-10"
+                className="absolute -top-4 -left-4 w-32 h-32 rounded-full opacity-15"
                 style={{ backgroundColor: '#C8941A' }}
               />
-              <div className="relative rounded-2xl overflow-hidden h-[460px] bg-gold-100 shadow-lg">
-                <img src={OWNER} alt="Prathamesh Chavan" className="w-full h-full object-cover" />
+              <div className="relative rounded-2xl overflow-hidden h-[460px] bg-gold-100 shadow-xl">
+                <img
+                  src="/images/founder.jpg"
+                  alt="Mr. Prathamesh Chavan, Founder & Managing Director"
+                  className="w-full h-full object-cover object-center"
+                />
                 <div
                   className="absolute bottom-0 left-0 right-0 p-6"
-                  style={{ background: 'linear-gradient(to top, rgba(26,18,8,0.85), transparent)' }}
+                  style={{ background: 'linear-gradient(to top, rgba(20,14,6,0.92), transparent)' }}
                 >
-                  <p className="text-white font-bold text-xl" style={{ fontFamily: 'Playfair Display, serif' }}>Prathamesh Chavan</p>
-                  <p className="text-gold-300 text-sm" style={{ fontFamily: 'Outfit, sans-serif', color: '#FAC830' }}>Founder & Managing Director</p>
+                  <p className="text-white font-bold text-2xl" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    Mr. Prathamesh Chavan
+                  </p>
+                  <p className="text-gold-300 text-sm font-medium mt-0.5" style={{ fontFamily: 'Outfit, sans-serif', color: '#FAC830' }}>
+                    Founder & Managing Director · Expogold Exim
+                  </p>
                 </div>
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <p className="section-label mb-4">Meet the Founder</p>
+              <p className="section-label mb-4">Leadership</p>
               <div className="gold-divider mb-6" />
               <h2
                 className="text-3xl lg:text-4xl font-bold mb-6"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
               >
-                Prathamesh Chavan
+                Mr. Prathamesh Chavan
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                With a background in agricultural sciences and international trade, Prathamesh founded Expolite Exim with a vision to elevate India's turmeric industry to global standards.
+                With deep agricultural roots in Sangli district and extensive experience in international spice trade logistics, Prathamesh established <strong>Expogold Exim</strong> to ensure Indian farmers receive their rightful value while global clients receive unadulterated, export-certified turmeric.
               </p>
               <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                His deep-rooted connection to Maharashtra's farming communities and his commitment to fair, transparent trade have made Expolite Exim a name synonymous with quality and trust.
+                His hands-on presence at every level — from farm soil inspection to container seal verification at JNPT port — guarantees that every shipment bearing the Expogold Exim seal exceeds client expectations.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ fontFamily: 'Outfit, sans-serif', color: '#5a4030' }}>
-                "We don't just export turmeric. We export a story — of soil, of families, of centuries of knowledge."
+              <p className="text-base italic leading-relaxed mb-8" style={{ fontFamily: 'Playfair Display, serif', color: '#7D590E' }}>
+                "We don't simply trade commodities; we export the authentic spirit of Indian soil with international transparency and utmost respect for our partners."
               </p>
               <div
-                className="inline-block px-5 py-3 border-l-2"
+                className="p-5 rounded-xl border-l-4 shadow-sm"
                 style={{ borderColor: '#C8941A', backgroundColor: '#FEF3D0' }}
               >
-                <p className="text-sm font-medium" style={{ fontFamily: 'Outfit, sans-serif', color: '#7D590E' }}>
-                  15+ years in spice export · Agricultural Science background
-                  <br />Maharashtra Native · Global Trade Certified
+                <p className="text-sm font-semibold text-warm-900" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  Direct Founder Contact:
                 </p>
+                <div className="flex flex-wrap gap-4 mt-2 text-xs font-medium text-warm-900">
+                  <a href="mailto:prathameshc753@gmail.com" className="text-gold-700 hover:underline">
+                    ✉ prathameshc753@gmail.com
+                  </a>
+                  <a href="https://wa.me/918010036756" target="_blank" rel="noopener noreferrer" className="text-gold-700 hover:underline">
+                    💬 WhatsApp: +91 8010036756
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* VALUES */}
+      {/* CORE VALUES */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <p className="section-label mb-4">What Drives Us</p>
+            <p className="section-label mb-4">Our Commitments</p>
             <div className="gold-divider mx-auto mb-6" />
             <h2
               className="text-4xl font-bold"
               style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
             >
-              Our Core Values
+              Expogold Core Principles
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
               <div
                 key={v.title}
-                className="card-hover p-7 rounded-xl border text-center"
+                className="card-hover p-7 rounded-2xl border text-center bg-warm-50"
                 style={{ borderColor: '#EAE6DC' }}
               >
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-bold text-white"
+                  className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-bold text-white shadow"
                   style={{ backgroundColor: '#C8941A', fontFamily: 'Outfit, sans-serif' }}
                 >
-                  {String(i + 1).padStart(2, '0')}
+                  0{i + 1}
                 </div>
                 <h3
                   className="text-lg font-bold mb-3"
@@ -182,17 +235,17 @@ export default function About({ setPage }: AboutProps) {
         </div>
       </section>
 
-      {/* TIMELINE */}
+      {/* MILESTONES */}
       <section className="py-24 bg-warm-50" style={{ backgroundColor: '#FDF8F0' }}>
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <p className="section-label mb-4">Our Journey</p>
+            <p className="section-label mb-4">Our Growth Story</p>
             <div className="gold-divider mx-auto mb-6" />
             <h2
               className="text-4xl font-bold"
               style={{ fontFamily: 'Playfair Display, serif', color: '#1A1208' }}
             >
-              Milestones
+              Company Timeline
             </h2>
           </div>
           <div className="relative">
@@ -204,17 +257,15 @@ export default function About({ setPage }: AboutProps) {
               {milestones.map((m, i) => (
                 <div
                   key={m.year}
-                  className={`relative flex flex-col md:flex-row gap-6 md:gap-0 ${
-                    i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className={`relative flex flex-col md:flex-row gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
                 >
-                  {/* Content */}
                   <div className={`flex-1 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} pl-12 md:pl-0`}>
                     <div
-                      className="inline-block px-4 py-2 rounded border"
+                      className="inline-block px-5 py-3.5 rounded-xl border shadow-sm"
                       style={{ borderColor: '#EAE6DC', backgroundColor: 'white' }}
                     >
-                      <p className="text-xs font-bold text-gold-600 mb-1" style={{ fontFamily: 'Outfit, sans-serif', color: '#A67714' }}>
+                      <p className="text-sm font-bold text-gold-600 mb-1" style={{ fontFamily: 'Outfit, sans-serif', color: '#A67714' }}>
                         {m.year}
                       </p>
                       <p className="text-sm leading-relaxed" style={{ fontFamily: 'Outfit, sans-serif', color: '#3a2806' }}>
@@ -222,9 +273,8 @@ export default function About({ setPage }: AboutProps) {
                       </p>
                     </div>
                   </div>
-                  {/* Dot */}
                   <div
-                    className="absolute left-4 md:left-1/2 top-3 w-3 h-3 rounded-full -translate-x-1/2 border-2 border-white"
+                    className="absolute left-4 md:left-1/2 top-4 w-3.5 h-3.5 rounded-full -translate-x-1/2 border-2 border-white shadow"
                     style={{ backgroundColor: '#C8941A' }}
                   />
                   <div className="flex-1 hidden md:block" />
@@ -235,7 +285,7 @@ export default function About({ setPage }: AboutProps) {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA BANNER */}
       <section className="py-16 bg-gold-500 text-white" style={{ backgroundColor: '#C8941A' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
@@ -243,26 +293,26 @@ export default function About({ setPage }: AboutProps) {
               className="text-2xl lg:text-3xl font-bold"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
-              Ready to source premium turmeric?
+              Partner with Expogold Exim for Turmeric Export
             </h3>
-            <p className="mt-1 text-white/80 text-sm" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              Let's build a partnership rooted in quality.
+            <p className="mt-1 text-white/90 text-sm" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              Direct farm sourcing · Rigorous lab analysis · Global shipping compliance
             </p>
           </div>
           <div className="flex gap-3 shrink-0">
             <button
               onClick={() => nav('products')}
-              className="px-6 py-3 border border-white/40 text-white text-sm font-semibold rounded hover:bg-white/10 transition-colors"
+              className="px-6 py-3 border border-white/40 hover:border-white text-white text-sm font-semibold rounded-lg hover:bg-white/10 transition-colors"
               style={{ fontFamily: 'Outfit, sans-serif' }}
             >
-              Our Products
+              View Products
             </button>
             <button
               onClick={() => nav('contact')}
-              className="px-6 py-3 bg-white text-warm-900 text-sm font-semibold rounded hover:bg-warm-100 transition-colors"
+              className="px-6 py-3 bg-white text-warm-900 text-sm font-semibold rounded-lg hover:bg-warm-100 shadow transition-colors"
               style={{ fontFamily: 'Outfit, sans-serif', color: '#1A1208' }}
             >
-              Get in Touch
+              Send Inquiry
             </button>
           </div>
         </div>

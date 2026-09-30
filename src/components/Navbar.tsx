@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 type Page = 'home' | 'about' | 'products' | 'contact';
 
@@ -39,25 +40,13 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-18 py-4">
-        {/* Logo */}
+        {/* Brand Logo */}
         <button
           onClick={() => handleNav('home')}
-          className="flex flex-col items-start leading-none"
+          className="focus:outline-none text-left"
+          aria-label="Expogold Exim Home"
         >
-          <span
-            className={`font-display text-xl font-700 tracking-tight transition-colors ${
-              scrolled || menuOpen ? 'text-warm-900' : 'text-white'
-            }`}
-            style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700 }}
-          >
-            Expolite Exim
-          </span>
-          <span
-            className="text-gold-500 text-xs font-body tracking-widest uppercase"
-            style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.6rem', letterSpacing: '0.2em' }}
-          >
-            Premium Turmeric Exports
-          </span>
+          <Logo variant={scrolled || menuOpen ? 'light' : 'dark'} size="md" />
         </button>
 
         {/* Desktop nav */}
