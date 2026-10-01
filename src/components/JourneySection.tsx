@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { publicImage } from '../utils/publicImage';
 
 type Page = 'home' | 'about' | 'products' | 'contact';
 
@@ -18,7 +19,7 @@ const STEPS = [
       'Our current sourcing network is based in Maharashtra, around Sangli, Satara and Kolhapur.',
     regionHighlight: 'SANGLI • SATARA • KOLHAPUR',
     regionSub: 'Maharashtra, India',
-    image: '/images/turmeric_farmer_harvest_1790763043941.jpg',
+    image: publicImage('turmeric_farmer_harvest_1790763043941.jpg'),
     evalTitle: 'HOW WE EVALUATE SUPPLIERS',
     evalChips: ['Quality', 'Consistency', 'Capacity', 'Pricing', 'Documentation', 'Export compliance'],
     ctaText: 'HOW WE SOURCE RESPONSIBLY →',
@@ -69,7 +70,7 @@ const STEPS = [
       'We coordinate packaging according to product characteristics, buyer requirements, order quantities and intended market, with customized options available where applicable.',
     desc2:
       'From bulk 25kg / 50kg jute sacks for industrial grinders to retail vacuum pouches with private label stenciling.',
-    image: '/images/turmeric_hero_slide3_1790762998825.jpg',
+    image: publicImage('turmeric_hero_slide3_1790762998825.jpg'),
     packagingCards: [
       {
         icon: '📦',
@@ -106,7 +107,7 @@ const STEPS = [
       'From supplier coordination and quality requirements to packaging, documentation and logistics, we coordinate the key stages involved in preparing an order for international markets.',
     desc2:
       'Direct dispatch via JNPT Mumbai (Nhava Sheva Sea Port) with comprehensive customs and freight handling.',
-    image: '/images/turmeric_export_shipping_1790763063948.jpg',
+    image: publicImage('turmeric_export_shipping_1790763063948.jpg'),
     exportFeatures: [
       {
         icon: '🔍',
@@ -155,7 +156,7 @@ export default function JourneySection({ setPage }: JourneySectionProps) {
     <section className="py-24 bg-white relative overflow-hidden border-t border-[#EAE6DC]">
       {/* Background Watermark */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 top-8 text-[100px] sm:text-[160px] lg:text-[220px] font-black text-[#E8E6E0]/40 select-none pointer-events-none leading-none z-0 tracking-wider"
+        className="absolute left-1/2 -translate-x-1/2 top-8 text-[100px] sm:text-[130px] lg:text-[220px] font-black text-[#E8E6E0]/40 select-none pointer-events-none leading-none z-0 tracking-wider"
         style={{ fontFamily: 'Playfair Display, serif' }}
       >
         JOURNEY
@@ -281,7 +282,7 @@ export default function JourneySection({ setPage }: JourneySectionProps) {
 
               <div className="lg:col-span-5 relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#EAE6DC] h-[400px] sm:h-[460px] bg-warm-900">
-                  <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                  <img src={step.image} alt={step.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
 
                 {/* Floating Dark Card: HOW WE EVALUATE SUPPLIERS */}
@@ -326,7 +327,7 @@ export default function JourneySection({ setPage }: JourneySectionProps) {
                 </p>
 
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-[#EAE6DC] h-64 bg-warm-900">
-                  <img src={step.image} alt="Laboratory testing" className="w-full h-full object-cover" />
+                  <img src={step.image} alt="Laboratory testing" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -369,7 +370,7 @@ export default function JourneySection({ setPage }: JourneySectionProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-in fade-in duration-300">
               <div className="lg:col-span-5">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#EAE6DC] h-[400px] lg:h-[460px] bg-warm-900">
-                  <img src={step.image} alt="Packaging facility" className="w-full h-full object-cover" />
+                  <img src={step.image} alt="Packaging facility" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
               </div>
 

@@ -1,3 +1,5 @@
+import { publicImage } from '../utils/publicImage';
+
 type Page = 'home' | 'about' | 'products' | 'contact';
 
 interface ProductsProps {
@@ -11,7 +13,7 @@ const PRODUCTS_DATA = [
     title: 'TURMERIC POWDER',
     origin: 'SANGLI, MAHARASHTRA, INDIA',
     desc: 'A vibrant golden-yellow spice made from the dried and ground rhizomes of the Curcuma longa plant, a member of the ginger family — sourced from Sangli, Maharashtra.',
-    image: '/images/turmeric_hero_slide1_1790762582982.jpg',
+    image: publicImage('turmeric_hero_slide1_1790762582982.jpg'),
     specs: [
       { label: 'GRADES', value: 'Curcumin 2–5% min. · Premium 5%+' },
       { label: 'MESH SIZE', value: '60–100 mesh (Fine / Ultra-Fine)' },
@@ -34,7 +36,7 @@ const PRODUCTS_DATA = [
     title: 'FINGER TURMERIC',
     origin: 'SANGLI, MAHARASHTRA, INDIA',
     desc: 'Whole sun-dried and double-polished rhizomes of the Curcuma longa plant, carefully selected and graded from premier harvests in Sangli, Maharashtra for maximum curcumin retention, density, and authentic aroma.',
-    image: '/images/turmeric_hero_slide3_1790762998825.jpg',
+    image: publicImage('turmeric_hero_slide3_1790762998825.jpg'),
     specs: [
       { label: 'GRADES', value: 'Salem · Nizamabad · Rajapore (Curcumin 3–7%)' },
       { label: 'PROCESSING', value: 'Double Polished / Single Polished / Raw Unpolished' },
@@ -80,8 +82,10 @@ export default function Products({ setPage }: ProductsProps) {
       {/* HERO */}
       <section className="relative h-80 lg:h-96 flex items-end overflow-hidden bg-warm-900">
         <img
-          src="/images/turmeric_hero_slide1_1790762582982.jpg"
+          src={publicImage('turmeric_hero_slide1_1790762582982.jpg')}
           alt="Expogold Turmeric Catalog"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div
@@ -130,6 +134,8 @@ export default function Products({ setPage }: ProductsProps) {
                   <img
                     src={p.image}
                     alt={p.title}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                   />
                   {/* Dark subtle gradient overlay */}

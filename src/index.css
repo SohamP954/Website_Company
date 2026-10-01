@@ -107,3 +107,9 @@ h1, h2, h3, h4, h5 {
   transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(200,148,26,0.14);
 }
+
+@media (max-width: 639px) {
+  .py-24 {
+    padding-block: 3.5rem;
+  }
+}

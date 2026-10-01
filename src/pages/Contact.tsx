@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { publicImage } from '../utils/publicImage';
 
 const OWNER_EMAIL = 'prathameshc753@gmail.com';
 const OWNER_PHONE = '+91 8010036756';
@@ -84,8 +85,10 @@ export default function Contact() {
       {/* HERO SECTION */}
       <section className="relative h-72 lg:h-96 flex items-end overflow-hidden bg-warm-900">
         <img
-          src="/images/turmeric_hero_slide2_1790762978799.jpg"
+          src={publicImage('turmeric_hero_slide2_1790762978799.jpg')}
           alt="Turmeric fields Maharashtra"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div

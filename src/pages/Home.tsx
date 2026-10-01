@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import JourneySection from '../components/JourneySection';
+import { publicImage } from '../utils/publicImage';
 
 type Page = 'home' | 'about' | 'products' | 'contact';
 
@@ -11,7 +12,7 @@ interface HomeProps {
 const HERO_SLIDES = [
   {
     id: 1,
-    image: '/images/turmeric_hero_slide1_1790762582982.jpg',
+    image: publicImage('turmeric_hero_slide1_1790762582982.jpg'),
     tag: 'Expogold Exim — Est. 2009',
     titleLine1: 'The Gold of',
     titleHighlight: "India's Soil",
@@ -24,7 +25,7 @@ const HERO_SLIDES = [
   },
   {
     id: 2,
-    image: '/images/turmeric_hero_slide2_1790762978799.jpg',
+    image: publicImage('turmeric_hero_slide2_1790762978799.jpg'),
     tag: 'Direct Farm Sourcing — Sangli, Maharashtra',
     titleLine1: 'Pure Harvest from',
     titleHighlight: 'Fertile Agro-Belts',
@@ -37,7 +38,7 @@ const HERO_SLIDES = [
   },
   {
     id: 3,
-    image: '/images/turmeric_hero_slide3_1790762998825.jpg',
+    image: publicImage('turmeric_hero_slide3_1790762998825.jpg'),
     tag: 'Export-Grade Processing & QC',
     titleLine1: 'Double-Polished Fingers &',
     titleHighlight: 'Micro-Milled Powder',
@@ -50,7 +51,7 @@ const HERO_SLIDES = [
   },
   {
     id: 4,
-    image: '/images/turmeric_export_shipping_1790763063948.jpg',
+    image: publicImage('turmeric_export_shipping_1790763063948.jpg'),
     tag: 'Worldwide Sea & Air Freight',
     titleLine1: 'Direct Container',
     titleHighlight: 'Port Logistics',
@@ -93,24 +94,15 @@ export default function Home({ setPage }: HomeProps) {
   return (
     <div>
       {/* 1. HERO WITH FULL-BLEED AUTOMATIC SLIDESHOW */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-warm-900">
-        {/* Automatic Background Slides with crossfade */}
-        {HERO_SLIDES.map((s, idx) => (
-          <div
-            key={s.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
-          >
-            <img
-              src={s.image}
-              alt={s.tag}
-              className={`w-full h-full object-cover transform transition-transform duration-[6000ms] ease-out ${
-                idx === currentSlide ? 'scale-105' : 'scale-100'
-              }`}
-            />
-          </div>
-        ))}
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-warm-900">
+        <img
+          key={slide.id}
+          src={slide.image}
+          alt={slide.tag}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover animate-in fade-in duration-1000"
+        />
 
         {/* Original gradient overlay */}
         <div className="hero-overlay absolute inset-0" />
@@ -127,7 +119,7 @@ export default function Home({ setPage }: HomeProps) {
             </p>
             <h1
               key={`title-${currentSlide}`}
-              className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-in fade-in duration-500"
+              className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-in fade-in duration-500"
               style={{ fontFamily: 'Playfair Display, serif', lineHeight: 1.08 }}
             >
               {slide.titleLine1}
@@ -255,22 +247,28 @@ export default function Home({ setPage }: HomeProps) {
             <div className="grid grid-cols-2 gap-3 h-96 lg:h-[480px]">
               <div className="rounded-lg overflow-hidden bg-gold-100 row-span-2">
                 <img
-                  src="/images/turmeric_farmer_harvest_1790763043941.jpg"
+                  src={publicImage('turmeric_farmer_harvest_1790763043941.jpg')}
                   alt="Farmer harvesting turmeric"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden bg-gold-100">
                 <img
-                  src="/images/turmeric_hero_slide1_1790762582982.jpg"
+                  src={publicImage('turmeric_hero_slide1_1790762582982.jpg')}
                   alt="Premium turmeric powder"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-lg overflow-hidden bg-gold-100">
                 <img
-                  src="/images/turmeric_hero_slide3_1790762998825.jpg"
+                  src={publicImage('turmeric_hero_slide3_1790762998825.jpg')}
                   alt="Turmeric sorting and export packing"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -408,8 +406,10 @@ export default function Home({ setPage }: HomeProps) {
                 {/* Image & Tag */}
                 <div className="relative h-64 sm:h-72 overflow-hidden bg-warm-900 group">
                   <img
-                    src="/images/turmeric_hero_slide1_1790762582982.jpg"
+                    src={publicImage('turmeric_hero_slide1_1790762582982.jpg')}
                     alt="Premium Indian Turmeric Powder in Bowl"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
@@ -488,8 +488,10 @@ export default function Home({ setPage }: HomeProps) {
                 {/* Image & Tag */}
                 <div className="relative h-64 sm:h-72 overflow-hidden bg-warm-900 group">
                   <img
-                    src="/images/turmeric_hero_slide3_1790762998825.jpg"
+                    src={publicImage('turmeric_hero_slide3_1790762998825.jpg')}
                     alt="Whole Finger Turmeric Export Sacks"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
@@ -688,8 +690,10 @@ export default function Home({ setPage }: HomeProps) {
       {/* 8. BANNER / CTA */}
       <section className="relative py-24 overflow-hidden bg-warm-900">
         <img
-          src="/images/turmeric_export_shipping_1790763063948.jpg"
+          src={publicImage('turmeric_export_shipping_1790763063948.jpg')}
           alt="Turmeric export logistics"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">

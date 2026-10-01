@@ -1,3 +1,5 @@
+import { publicImage } from '../utils/publicImage';
+
 type Page = 'home' | 'about' | 'products' | 'contact';
 
 interface AboutProps {
@@ -43,8 +45,10 @@ export default function About({ setPage }: AboutProps) {
       {/* HERO */}
       <section className="relative h-80 lg:h-[420px] flex items-end overflow-hidden bg-warm-900">
         <img
-          src="/images/turmeric_hero_slide2_1790762978799.jpg"
+          src={publicImage('turmeric_hero_slide2_1790762978799.jpg')}
           alt="Turmeric farm crop in Maharashtra"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div
@@ -94,8 +98,10 @@ export default function About({ setPage }: AboutProps) {
             <div className="grid grid-cols-2 gap-3.5">
               <div className="rounded-xl overflow-hidden bg-gold-100 h-60 shadow-sm relative group">
                 <img
-                  src="/images/turmeric_farmer_harvest_1790763043941.jpg"
+                  src={publicImage('turmeric_farmer_harvest_1790763043941.jpg')}
                   alt="Turmeric Farmer Harvest"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
@@ -104,8 +110,10 @@ export default function About({ setPage }: AboutProps) {
               </div>
               <div className="rounded-xl overflow-hidden bg-gold-100 h-60 shadow-sm relative group">
                 <img
-                  src="/images/turmeric_hero_slide1_1790762582982.jpg"
+                  src={publicImage('turmeric_hero_slide1_1790762582982.jpg')}
                   alt="Premium Turmeric Powder and Botanical Leaves"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
@@ -114,8 +122,10 @@ export default function About({ setPage }: AboutProps) {
               </div>
               <div className="rounded-xl overflow-hidden bg-gold-100 col-span-2 h-48 shadow-sm relative group">
                 <img
-                  src="/images/turmeric_hero_slide3_1790762998825.jpg"
+                  src={publicImage('turmeric_hero_slide3_1790762998825.jpg')}
                   alt="Turmeric Sorting & Export Packing Facility"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3 text-white text-xs font-semibold">
@@ -138,8 +148,10 @@ export default function About({ setPage }: AboutProps) {
               />
               <div className="relative rounded-2xl overflow-hidden h-[460px] bg-gold-100 shadow-xl">
                 <img
-                  src="/images/founder.jpg"
+                  src={publicImage('founder.jpg')}
                   alt="Mr. Prathamesh Chavan, Founder & Managing Director"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center"
                 />
                 <div

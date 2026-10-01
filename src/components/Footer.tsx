@@ -78,7 +78,7 @@ export default function Footer({ setPage }: FooterProps) {
               </li>
               <li>
                 <span className="block text-white text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#FAC830' }}>Email</span>
-                <a href="mailto:prathameshc753@gmail.com" className="hover:text-gold-300 transition-colors">
+                <a href="mailto:prathameshc753@gmail.com" className="break-words hover:text-gold-300 transition-colors">
                   prathameshc753@gmail.com
                 </a>
               </li>
